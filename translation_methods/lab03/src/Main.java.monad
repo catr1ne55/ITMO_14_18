@@ -1,0 +1,168 @@
+.class Main
+.func main
+push eax 
+.int i
+push 0
+pop i
+jmp for_out761960786
+.label for761960786
+push i
+call print
+inc i
+push i
+pop ebx 
+.label for_out761960786
+push 50
+push i
+ls
+pop eax 
+jnz for761960786
+pop eax 
+.int t
+push 0
+pop t
+push 1
+push t
+add
+pop t
+.label while335471116
+push 1000
+push t
+push t
+mul
+ls
+pop eax 
+jz while_out335471116
+.int f
+push t
+inc t
+push 10
+push 3
+push 2
+push t
+mul
+sub
+mod
+call foo
+pop f
+dec f
+push f
+call print
+jmp while335471116
+.label while_out335471116
+push 0
+push 1
+push 25
+add
+sub
+push t
+gr
+not
+pop eax 
+jz if25548982
+push 2
+pop t
+.label if25548982
+push t
+call print
+push 559
+push 65246
+call hcf_recursive
+call print
+push 6533
+push 5426534
+call hcf_recursive
+call print
+push 74565725
+push 9245
+call hcf_recursive
+call print
+push 559
+push 65246
+call hcf
+call print
+push 6533
+push 5426534
+call hcf
+call print
+push 74565725
+push 9245
+call hcf
+call print
+ret
+
+.func foo
+.int r
+pop r
+.int q
+pop q
+push r
+push q
+gr
+pop eax 
+jz ternary1511785794
+push r
+push q
+add
+jmp ternary1511785795
+.label ternary1511785794
+dec r
+push r
+push q
+mul
+.label ternary1511785795
+ret
+
+.func hcf_recursive
+.int b
+pop b
+.int a
+pop a
+push 0
+push b
+eq
+pop eax 
+jz if963601816
+push a
+ret
+.label if963601816
+push b
+push b
+push a
+mod
+call hcf_recursive
+ret
+
+.func hcf
+.int d
+pop d
+.int c
+pop c
+.label while961419791
+push 0
+push d
+neq
+pop eax 
+jz while_out961419791
+push d
+push c
+mod
+pop c
+push d
+push c
+add
+pop c
+push d
+push c
+sub
+pop d
+push d
+push c
+sub
+pop c
+jmp while961419791
+.label while_out961419791
+push c
+ret
+
+
